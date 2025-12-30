@@ -1,0 +1,56 @@
+System design:
+Systems design is the use of computer engineering principles to build large scale distributed systems.
+It involves converting business problems and requirements into technical solutions.
+
+Vertical Scaling
+optimise processes by increasing throughput within the same resource.
+
+Preprocessing usingcron job:
+Prepare resource handling before hand.
+
+Back up servers:
+Have a additional server in back up to maintain system resilliance.
+Have backup and avoid single point of failure.
+
+Vertical Scaling:
+Have multiple server in place to handle maximum performance.
+
+Microservices Architecture:
+Splitting up of difference parts of the system into single individual services.
+
+Distributes systems: (partitioning)
+It is a network of independent computers (nodes) that work together, communicate over a network, and share resources to appear as a single, unified system to users
+
+Load Balancing:
+Its a central point that is used to route the request based on user location or server availability
+
+Decoupling:
+Seperation of concerns to deliver optimal performance.
+It allows part of the system to work independently and completly isolated from one other.
+It helps in fostering agility,independent deployments and easier integration.
+
+Logging and metric calculation:
+They have 4 main parts:
+1.) Analytics
+2.) Auditing
+3.) Reporting
+4.) Machine Learning
+
+Extensibility:
+
+
+Main problems for scalability:
+1.) Order overload
+2.) Complexity
+3.) Mishaps
+4.) recruitment
+5.) Fault Tolerance
+6.) Seperation of concerns
+
+
+Low Level design:
+it focusses on how one codes these High Level design into services.
+
+
+
+

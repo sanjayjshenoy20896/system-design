@@ -1,0 +1,48 @@
+Capacity planning and estimation:
+eg: Youtube
+Number of uploads 1B x (1/1000)*10 -> 10^7 minutes
+Video file size per minute ->2hrs vide0 -> 0.4gb -> for 1 min -> 200mb/60-> 3mb
+Total file storage -> 30TB -> raw footage
+
+
+It is better to keep added space for fault tolerance and performance
+so 30 *3 = 90tb in multiple resolutions (2X resolutions) -> .2 PB for one day
+
+
+
+
+Storage:
+------STORAGE
+Let's start with storage requirements:
+About 1 billion active users.
+I assume 1/1000 produces a video a day.
+Which means 1 million new videos a day.
+
+What's the size of each video?
+Assume the average length of a video to be 10 minutes. 
+ Assume a 10 minute video to be of size 1 GB. Or...
+A video is a bunch of images. 10 minutes is 600 seconds. Each second has 24 frames. So a video has 25*600 = 150,000 frames.
+ Each frame is of size 1 MB. Which means (1.5 * 10^5) * (10^6) bytes = 150 GB.
+This estimate is very inaccurate, and hence we must either revise our estimate or hope the interviewer corrects us. Normal video of 10 minutes is about 700 MB.
+
+As each video is of about 1GB, we assume the storage requirement per day is 1GB * 1 million = 1 PB. 
+
+This is the bare minimum storage requirement to store the original videos. If we want to have redundancy for fault tolerance and performance, we have to store copies. I'll choose 3 copies. 
+That's 3 petabytes of raw data storage.
+What about video formats and encoding? Let's assume a single type of encoding, mp4, and the formats will take a 720p video and store it in 480, 360, 240 and 144p respectively. That means approximately half the video size per codec.
+
+If X is the original storage requirement = 1 PB,
+We have X + X/2 + X/4 + X/8 == 2*X.
+With redundancy, that's 2X * 3 = 6*X.
+
+That's 6 PB(processed) + 3PB (raw)  == 10 PB of data. About 100 hard drives. The cost of this system is about 1 million per day.
+
+For a 3 year plan, we can expect a 1 billion dollar storage price.
+
+Now let's look at the real numbers:
+Video upload speed = 3 * 10^4 minutes per minute.
+That's 3 * 10^4 *1440 video footage per day =  4.5 * 10^7 minutes.
+Video encoding can reduce a 1-hour film to 1 GB. So 1 million GB is the requirement. That's 1 PB.
+
+So the original cost is similar to what the real numbers say.
+

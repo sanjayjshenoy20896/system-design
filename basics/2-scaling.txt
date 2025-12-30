@@ -1,0 +1,23 @@
+How systems interact:
+When the user sends a request to a server. The server then cosumes the request and performs some operations and returns a response back to the user.
+The above process is described as an Application Programmer Interface (API).
+
+Scaling system design:
+It is a network of independent computers (nodes) that work together, communicate over a network, and share resources to appear as a single, unified system to users
+
+There are of 2 types
+1.) Horizontal Scaling ->  Adding more machines to deal with increasing requirements
+a.) Requires load balancing
+b.) resilient
+c.) Network based communications (RPC)
+d.) Data inconsistancy
+e.) Scaling based on user demand
+2.) Vertical Scaling -> Replacing the current machines with more advanced machines to improve throughput and hence response time.
+a.) Single point of failure
+b.) Inter process communications
+c.) Data consistancy
+d.) Hardware limitations
+
+Using cloud solutions:
+It is a set of severs that are running on the cloud. We use this servers to control our services
+

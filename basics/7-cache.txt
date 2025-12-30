@@ -1,0 +1,42 @@
+Cache:
+Cache memory is a small, high-speed memory located near the CPU, designed to store recently accessed instructions and data.
+The primary function of cache is to improve system performance by reducing the time required to access frequently used data and instructions.
+These are directly fecthed from the CPU memory helps in performance.
+
+Cache Memory:
+Cache memory is a small, fast memory unit that holds copies of the data and instructions that are frequently accessed by the CPU.
+By storing recently used data, the cache reduces the time it takes for the CPU to retrieve instructions and data, thereby enhancing performance.
+
+
+Cache hit vs Cache Miss:
+If the requested data is found in the cache, it's called a Cache Hit.
+If the data is not found, it's called a Cache Miss
+
+Cache Organization and Memory Hierarchy
+Cache memory operates by transferring a block of elements from the main memory to the cache memory.
+This helps in reducing access time and improving performance.
+
+
+The goal is to place frequently accessed data in the cache so the CPU can quickly retrieve it, minimizing the time spent on memory accesses.
+
+Locality of Reference
+The underlying principle of cache memory is the locality of reference, which can be divided into two types:
+
+Spatial Locality: 
+Refers to the tendency of the CPU to access adjacent memory locations. If a program accesses a memory location, it is likely to access neighboring locations in the near future.
+
+Temporal Locality: 
+Refers to the tendency of the CPU to repeatedly access the same memory locations within a short time period. This indicates that recently accessed data is likely to be accessed again soon.
+
+Cache Performance and Hit Ratio
+Hit Ratio = (Number of Hits) / (Total Accesses) = hits / (hits + misses)
+
+A higher hit ratio means that the CPU is retrieving data more frequently from the cache, leading to better performance. Several factors can improve cache performance:
+
+Increasing the cache block size
+Using higher cache associativity
+Reducing the miss rate
+Reducing the miss penalty (the time taken to fetch data from main memory after a cache miss)
+Reducing the time to hit the cache
+
+

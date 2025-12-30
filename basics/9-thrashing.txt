@@ -1,0 +1,16 @@
+Thrashing:
+when a process spends more time in paging (swapping pages in and out of memory) than executing instructions. 
+
+This causes frequent page faults, long queues for the paging device, and further decreases in CPU utilization.
+
+As the CPU scheduler tries to compensate by adding even more processes, the system enters a cycle of continuous paging, known as thrashing.
+
+Cause of Thrashing
+High degree of multiprogramming exceeds available memory frames.
+Processes frequently request pages not in memory, causing page faults.
+Excessive paging reduces CPU execution time and overall system throughput.
+New processes steal memory frames from existing processes, increasing page faults further.
+
+Minimizing Thrashing
+Local Replacement: Prevents one process from stealing frames from another, reducing cascading page faults.
+Working Set Strategy: Ensures each process gets enough frames to hold its active pages, maximizing CPU utilization while minimizing thrashing.

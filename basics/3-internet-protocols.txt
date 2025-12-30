@@ -1,0 +1,54 @@
+What are HTTP and HTTPS protocols?
+These are basically that are used to communicate over the internet.
+They are 2 basic ways:
+1.)HTTP -> Hyper Text Transfer Protocol
+2.)HTTPS -> Hyper Text Transfer Protocol 
+
+HTTP:
+It is the standard protocol used by web browsers and servers to communicate and exchange data.
+
+Main features:
+HTTP operates on port 80 by default.
+It transfers data in plain text, meaning the content is not protected.
+Because it is unencrypted, attackers can intercept or modify the data easily.
+It is still used for non-sensitive websites where security is not a concern (like public blogs or info pages).
+
+Advantages:
+1.) Simplicity
+2.) Speed
+3.) Compatibility
+
+Disadvantages:
+1.) No security
+2.) No User trust
+3.) Not suitable for Sensitive data
+
+HTTPS:
+It is an extension of HTTP with added security through encryption.
+
+Main features:
+HTTPS operates on port 443 by default.
+It uses SSL (Secure Sockets Layer) or TLS (Transport Layer Security) to encrypt the data.
+Even if attackers capture the traffic, they cannot read the actual message.
+Browsers show a padlock symbol next to the URL to indicate that the site is secure.
+
+Advantages:
+Data encryption
+User trust
+SEO benefits
+Prevents data tempering
+Supports modern browsers
+
+Disadvantages:
+Cost of certifications
+Performance overhead
+Setup Complexity
+
+Why HTTPS over HTTP?
+Data security
+User trust
+Protection from hackers
+Better search engine hacking
+Compliance with standards
+Improved performance
+
