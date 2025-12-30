@@ -1,0 +1,25 @@
+Server:
+It is a system that serves a request.
+
+Load balancing
+Concept of actually having n servers and balaning the load across the n servers is load balancing.
+
+
+Consistant hashing:
+When user sends a requests, a unique request id is generated and this request id(Uniformly random) is then sent to the server.
+When can hash the request id as h(r1) ->m1 
+
+How to decide which server gets a reuest
+m1/n -> N is number of servers, The reminder is the server the request is sent to
+As the hashing function is contents, the module operation can retrun the same value leading to resource issue.
+
+Therefor the hasing mechanism has to altered to accomdate the edge cases.
+
+Load factor -> it is the reciprocal of number of servers
+
+
+
+
+
+
+

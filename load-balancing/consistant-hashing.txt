@@ -1,0 +1,15 @@
+Consistant hashing:
+It allows requests to be mapped into hash buckets while allowing the system to add and remove nodes flexibly so as to maintain a good load factor on each machine.
+
+The standard way to hash objects is to map them to a search space, and then transfer the load to the mapped computer. A system using this policy is likely to suffer when new nodes are added or removed from it. 
+
+maps servers to the key space and assigns requests(mapped to relevant buckets, called load) to the next clockwise server. Servers can then store relevant request data in them while allowing the system flexibility and scalability.
+
+Request allocation: assigning a request to a server
+
+Consistent hashing assigns requests to the servers in a way that the load is balanced are remains close to equal. 
+
+Implementation:
+We can hash the server id using a hash function. we find the module of the server id with the total number of servers.
+As earlier disucssed the request id is also hashed. now post module operation, we get the hash value , by this way we will be able to map the request the hash id consistantly
+
