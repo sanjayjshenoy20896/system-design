@@ -1,0 +1,43 @@
+Databases:
+For making the application sustainable, we split it into 2 layers anmely
+a.) Web tier 
+b.) Data tier
+
+They can be scaled independently
+ACID Properties:
+Atomicity: Completly succesds or completly failed
+Consistancy: Valid State -> another valid state
+Isolation: Each transactions are independently
+Durable: Transactions remain commited when in case of system failure
+Choosing the right database
+There are 2 main options
+1.) Relational Databases (RDBMS) -> eg: psotgress, mysql,sqllite and oracle
+2.) Non Relational Databases -> eg: Mongodb.cassandra,redis
+
+Relational databases:
+They use SQL (Structured Query Language) for data for operations
+Data is stored in rows and columns
+Advantages:
+-> Support complex join operations
+-> Data consistancy and integrity
+
+Non Relational Databases:
+The data can be stored in multiple forms
+Document stores -> Mongo db
+Wide-column stores -> Wide column stores
+key-value stores -> Redis
+Graph -> Neo4g
+
+Advantages:
+-> Can handle highly dynamic and large datasets
+-> Optimisied for low latency and scalability
+
+Relational vs Non Relational
+Relational:
+Data is well structured with clear relationships
+Strong consistancy and transactional integrity
+
+Non relational:
+Super low latency for rapid responses
+Data is unstructured or semi striuctured
+Scalable storage for massive data volumes

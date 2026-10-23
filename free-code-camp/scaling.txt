@@ -1,0 +1,10 @@
+Scaling:
+Increases the handling capacity for the server with increased user base
+
+Vertical Scaling:
+-> We are increases the capacity if the single server
+-> There is hard resource limit for the server
+Horizontal scalling:
+-> Increases number of server instances
+-> Suitable for large scaling operations
+-> Better fault tolerance

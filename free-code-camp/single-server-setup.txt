@@ -1,0 +1,31 @@
+Single server setup
+Step 1:
+Building a single server which connects with webapp, database and cache
+
+Step 2:
+Understanding the request flow -> HTTP
+users (Web browser + mobile app) -> DNS (Domain naming system)
+|
+V
+Web Application (Server ip address)
+
+Step 3:
+Identifying traffic source
+web browser / mobile app is the main traffic source
+
+Server handles the business logic, data storage and presentation using HTML,CSS and Javascript
+
+Request data from the server using api calls and responses are typically in json format
+eg:
+GET /products/:id -> Retrive details for product id = 456
+
+Single server setup:
+This can be effective when the user base is small and server the user base well
+
+Identify areas where a single server might fall short as user demand increases
+
+Key takeaways:
+Start small: Begin with a straightforward single-server setup
+Request flow: Understand how requests flow through your system
+Traffic source: How the web and mobile applications interact with the server
+
