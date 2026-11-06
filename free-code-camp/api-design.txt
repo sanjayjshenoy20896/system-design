@@ -1,0 +1,111 @@
+API Design
+
+Overview:
+-> What api are and their role in system architecture
+-> 3 most common api styles
+-> 4 design priciples
+-> Application protocols influence api design decisions
+-> API design process
+
+API: Application Programming interfacte
+It defines how software components interact with each other
+It defines the following
+1.) What requests can be made
+2.) How to make them
+3.) What responses to expect
+
+Key characteristics
+1.) Abstract mechanism
+Hide implemntation details while exposing functionality
+2.) Service boundaries
+Clear boundary definition b/w system components
+
+Core API styles
+REST 
+-> Resource based
+-> Stateless
+-> Standardised methods
+-> Most common styles
+
+Graphql
+-> Query language
+-> Single endpoint
+-> Operation level
+-> Minimal round trips
+
+gRPC
+-> Protocal Buffers
+-> Service definitions
+-> Communication types
+-> High perfomrmance
+ 
+Difference between rest and Graphql
+REST:
+Resource based endpoints
+Multiple requests for related data
+HTTP methods define operations
+Fixed response structures
+Explicity verskoning
+Buitin http caching
+eg: GET /api/v1/users/123
+
+Graph ql:
+Single endpoint for all operations
+Single request with precose data
+Query language defiens operatioms
+Client specific response structures
+Schema Evalotion without versioning
+Application level caching
+eg:
+query {
+    users(id: "123"){
+        name,
+        posts {title,content}
+        followers {name}
+    }
+}
+
+
+Design Principles:
+1.) Consistancy
+Naming
+patterns
+2.) Simplicity
+Focus on core use cases
+intutive design
+3.) Security
+authentication
+authorization
+input validation
+rate limiting
+4.) perfomrmance
+Caching Strategies
+Pagination
+Minimize payloads
+Reduce roudn trips
+
+The best api is the one developers can use w/o reading documnetation
+
+
+How protocols influence api design
+-> They define api structure, performnce and capabilities
+-> API design must accomadate protocol limitations and leverage stengths
+
+Design process:
+-> Identify core use cases and user stories
+-> Define scope and boundaries
+-> Determine performance requirements
+-> Consider security constarints
+
+Design appraoches
+1.) Top down -> High level requirments and wokflows
+2.) Bottom up -> Woeking with existing data models
+3.) Contarct first -> Define api Contarct
+
+API lifecycle Management
+1.) Design
+2.) Development
+3.) Deployment and monitoring
+4.) Maintenance
+5.) Deprecation and retirement
+

@@ -1,0 +1,98 @@
+API Protocols:
+How the protocols influence api decisions
+
+Role of applications protocols in network stack
+HTTP/HTTPS fundamentals and theor relationship to API
+Websockets for real time communications
+Advanced Message Queuing Protocol (AMQP)
+gRPC (Google Remote Procedure Call)
+
+Application Protocols in the network stack
+Application Layer -> HTTP/HTTPS WebSockets MQTT AMQP gRPC
+Transport Layer -> TCP UDP
+Network Layer -> IP (IPv4/IPv6)
+Data Link Layer -> Ethernet Wifi Bluetooth
+Physical Layer
+
+Application Layer is most important while building api
+
+HTTP (Hypertext Transfer Protocol)
+
+Client -> (req,res) -> Server
+
+HTTP Methods (GET,POST,PUT,DELETE,PATCH)
+Status Codes
+2xx -> Success
+3xx -> Redirection
+4xx -> Client error
+5xx -> Server error
+200 -> OK
+
+Common Headers
+Content-type
+authorization
+Accept
+Cache-Control
+User-Agent
+
+HTTPs: HTTP + TLS/SSL encryption
+Protects data in transit from eavesdropping
+
+Benefits:
+Data encryption
+Data integrity
+authentication
+SEO Benefits
+
+Risk Without HTTPS
+Man-in-the-middle attacks
+Data tampering
+information theft
+loss of user trust
+
+Disadvantages:
+-> Increased latency
+-> Wasted Bandwidth
+-> Server resource overhead
+
+
+Web Sockets:
+Client <-> Server (WebSocket Handshake)
+1.) Server pushed data to Client
+2.) Client sends an acknowledgement
+
+Advantages
+1.) Real-time data (minimal latency)
+2.) Reduced Bandwidth usage
+3.) Bidirectional communiccation
+
+Advanced Message Queuing Protocol
+
+Producer(Sends message) -> Message Broker -> Consumer (REcieves the message)
+
+
+Message Broker
+1.) Exchange
+2.) Queues
+3.) Message Routing
+
+Exchnage types:
+Direct -> One to one communications
+Fanout -> One to many communications
+Topic
+
+gRPC: (Protocol Buffers)
+Client (Stubs, type Safety)  -> (HTTP/2)-> Server(Services, Stremaing)
+
+Common Use Cases:
+Microservices
+Polyglot systems
+Real-time Services
+
+Steps in Choosing right protocol
+1.) Interaction Patterns -> Request-Response vs Real time
+2.) Performance (Speed and effeciency)
+3.) Client Compatibility (Browser, mobile and legacy)
+4.) Payload Size (Data Volume and encoding)
+5.) Security (Authentication, Encryption)
+6.) Developer Experience (Tooling and documentation)

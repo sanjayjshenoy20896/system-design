@@ -1,0 +1,124 @@
+Authentication:
+It verifies that user or service trying to access the service
+
+User loopholes:
+Authentication methods is not aith frameworks
+Treat JWT as an authentication type
+Confuse Bearer Auth & JWT
+Call OAuth as an authentication method
+Mix up SSO in with authentication methods
+
+Authentication methods:
+1.)Basic Auth Methods:
+a.) Basic 
+eg: Authorization:  Basic <authkey>
+(base64 encodes string)
+
+steps:
+1.) When user makes a request with the credentials
+2.) We check the user credentails from the auth Key
+3.) If the credentails are valid, we proceed with the operatioms
+
+-> We return 401 (unauthorised)
+-> We return 200 (valid credentials)
+
+drawbacks:
+1.) Easily reversible
+2.) Only secure with HTTPS
+3.) Rarely used in production
+
+2.) Digest 
+This is in continuation with the basic authentication but here it used md5 hash and it i smore secure than the basic.
+It is irreversible
+
+3.) API key
+Here we use the api key for the user permissions
+Steps:
+1.) Look up the api key and fetch the user permissions
+2.) If they api key and credentails are valid, we use authorise the request and proceed forward
+
+Ifthe request is valid, we proceed with a 200 status
+if the request is invalid , we proceed with a 401 request
+
+They may seem similiar to JWT but they are random strings
+
+4.) Session based:
+Here we create a session for the user in our session store
+Steps
+-> login with credentails
+-> Create a session in session store and retrive the session id
+-> Set the sessionId in a cookie
+-> Request with cookie
+-> Look up the session in the store
+-> If it is a valid session , return a user data
+-> It is a authorised responsse, return 200 response status
+-> In case of invalid session, return 401 response status 
+
+Session storage is in 3 ways
+1.) Key varable
+2.) Redis cache (recommended)
+3.) Database
+
+5.) Bearer token authentication:
+Steps:
+1.) Login with credemtails
+2.) Vlaidate credentials against the token
+3.) Retrun jwt token
+4.) Request with bearer token
+5.) Verify the signature and handle locally
+
+6.) Access token and refresh token
+Access token: 15 min -to 1 hr
+Refresh token: 7 to 30 days
+
+Store refresh token only in httpOnly Cookies
+
+Steps:
+-> Send  a login request
+-> Get the access token and refresh token
+-> Request with expired token
+-> Returns a unauthorised request
+-> Send a refresh token request
+-> New access token is provided
+-> request is sent with a new token
+
+
+7.) OAuth2 and openId Connect
+It is a provider based authentication
+eg: Google drive
+-> When user connects to google drive 
+-> User redirects to consent screen
+-> Sends a permission request
+-> Allow access
+-> return auth code
+-> Exchnage code for token
+-> Retrive access token
+-> Request files with token
+-> Return user files
+
+
+OpenId connect
+Steps:
+-> SignIn with google
+-> Redirection to auth endpoint
+-> Give consent to the credentials
+-> Return authorization code
+-> Exchange access token and id token
+-> Send id token for verification
+-> Session is created on confirmation of identity
+-> Login is successfull
+
+8.) Single Sign-On (SSO):
+It is user experiance to connect to multiple credentails based on a single connecion request
+Steps:
+1.) Login once with identity token and stpre the identity in global session
+
+2.) set the sessionToken in cookie
+
+3.) Use this session token to make multiple requests
+
+
+SAML -> Securitu Assertion Markup Language
+OIDC -> OpenId Connect
+
+

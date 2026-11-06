@@ -1,0 +1,28 @@
+Security:
+Methods to protect your API
+1.) Rate limiting
+It controls how many requests the user can make to the application during a given time period
+-> per endpoint
+-> per user/ip
+-> Overall to mitgate DDos
+
+2.) CORS
+Allow only authorised users to connect to server
+
+3.) SQL & NoSQL Injection
+It occurs when user inputs are not sanitised before passing to database layer
+Use paramterised queries
+4.) Firewalls
+-> It is used to filter malicous traffic into the application
+
+5.) VPN
+Some applications can be access only through a private network
+
+6.) CSRF (Cross-Origin Request Forgery)
+It tricks users browser from making unwanted requests into the server
+
+7.) XSS (Cross Site scripting)
+It is used by hackers to inject malicious scripts into the servers from input fields
+
+
+

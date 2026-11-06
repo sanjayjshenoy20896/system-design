@@ -1,0 +1,36 @@
+Authorization:
+It tells the user what they can hav access to
+
+
+How applications manage permissions
+1.) RBAC (Role-Based Access Control)
+2.) ABAC (Attribute-Based Access control)
+3.) ACL (Access Control list)
++ How OAuth and JWT help enforce those rules
+
+
+1.) Role-Based Access Control
+Used on most apps you use daily
+eg: Stripe dashboards, CMS tools, team management
+
+2.) Attribute based access control:
+It uses user attributes, resource attributes and environemnt attributes
+More floexible than RBAC
+It requires good policy management
+Risk of policy conflicts
+
+3.) Access control list
+Resource based access permissions
+eg: Google drive
+Granular control
+Hard to scale
+
+OAuth2: Delegated Authorization
+When one service accesses another service on behalf of user
+Access token is not a password
+
+Token based authorization
+JWT, bearer Tokens and permission logic
+-> Token carries identity and claims
+-> Authorization model defines whats allowed
+-> Tokens are just the mechnaisms. They dont make decisions -> the backend code Does

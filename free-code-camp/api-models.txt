@@ -1,0 +1,157 @@
+API models
+
+
+
+Rest (Representation State Transfer)
+It is way fo communication between different systems using http web methods
+Overview
+-> Architecture Principles
+-> Resource models and url design
+-> Status codes and error handling
+-> Best practises
+
+Resource models
+eg: 
+Business domain
+Product ->  Order -> Reviews
+Rest Resources
+products -> orders -> reviews
+
+Url patterns
+products
+/api/v1/products
+/api/v1/products/:product_id
+
+Filtering:
+eg: /products?category=books&inStock=true
+
+Sorting:
+eg: /products?sort=price_asc
+
+Pagination:
+/products?page=2&limit=3
+
+Benefits:
+Saves Bandwidth
+Improves performance
+Gives frontend more flexibility
+
+HTTP Methods:
+1.) GET -> Read
+Safe and idempotent
+2.) POST -> Write (Create)
+Not Safe and not idempotent
+3.) PUT -> Update (Replace)
+Not safe, idempotent
+4.) PATCH -> Update (Partial)
+not safe, not idempotent
+5.) DELETE -> DELETE 
+not safe and idempotent
+
+Safe: Does the chnage the state on server
+Idempotent: Same effect if repeated
+
+Status codes and error handling
+Success: 2xx
+200 OK
+201 Created
+204 No Content
+
+Redirection: 3xx
+
+Client errors: 4xx
+400: Bad Request
+401: Unauthorised
+404: Not Found
+
+Server errors 5xx
+
+Error format
+{
+    "error":{
+        "code":"VALIDATION_ERROR",
+        "message":"Invalid product id format",
+        "details": [...] // detaiols comes here if any
+    }
+}
+
+Best practises:
+-> Use plural nouns for Resources
+-> Keep URL's Consistent and hierarchial
+-> Support filtering,sorting and Pagination
+-> Version your api
+
+Graphql API
+Core concepts
+Schema design and type system
+Queries and mutations
+Hnadling errors
+best practises
+
+Why Graph ql:
+It was created to solve a problem of making multiple api calls for resources on server.
+With graph ql, a single query can fetch all resource in one api calls and hence saving server Bandwidth
+
+Schema Design and type system
+Contract between user and Client
+eg:
+type User {
+    id:ID!,
+    name: String!
+    posts:[Post!]!
+}
+
+type Query {
+    user(id:Id!):User
+}
+
+type Mutation {
+    createUser(name:String!):User
+}
+
+Queries and mutation
+Queries -> Use to get informayion
+Mutation -> Used to upadte or delete information
+
+queries examples
+query{
+    user(id:123){
+        name
+        posts {
+            title
+        }
+    }
+}
+
+mutations example:
+mutation {
+    createPost(
+        title: 'New post',
+        body: 'Hello'
+    ) {
+        id,
+        title
+    }
+}
+
+Eror handling
+-> It always returns 200
+-> we must model the response to return error status
+
+eg:
+{
+    "data":{"user":null},
+    "errors: [
+        {
+            "statusCode":404,
+            "message":"User not found",
+            "path":["user"]
+        }
+    ]
+}
+
+
+Best Practises:
+1.) Keep schemas small
+2.) Use meaningful Naming
+3.) Implement query depth limits

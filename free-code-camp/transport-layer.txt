@@ -1,0 +1,26 @@
+Transport Layer: TCP and UDP
+TCP: reliable and slower
+UCP : fast and unreliable
+
+Transmission Control Protocol
+-> Guarantedd Delivery
+-> Connection based (3-way handshake)
+-> Ordered packets
+-> Error Checking
+
+User Datagram Protocol
+No Delivery guarantee
+Connectionless
+Faster Transmission
+less overhead
+
+3 step handshake:
+a.) Sync
+Client sends a connection request to the server
+b.)Sync-ack
+Server recives the connection request and sends an acknoledgenment
+
+c.) ack
+Client recieves the acknoledgenment amd begins communication or data Transfer
+
+

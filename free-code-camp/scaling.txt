@@ -8,3 +8,79 @@ Horizontal scalling:
 -> Increases number of server instances
 -> Suitable for large scaling operations
 -> Better fault tolerance
+
+
+load Balancer:
+It is used for redirecting the traffic to a perticular server.
+It also helps in re-routing traffic to the other server in case of health chek issue
+It also helps in connecting new servers
+
+It distributes incoming traffic across multiple servers to ensure no single server bears to much load
+
+7 Strategies and alogorithms used in load balancing
+
+1.) Round robin:
+It is a first come first serve basis
+It routes traffic in order of its incoming traffic
+It works with similiar specifications
+
+2.) Least connections:
+It routes tarffic to server with least active connections
+It us used in conditions where server sessions may vary from server to server
+
+3.) Least Response time:
+It routes to traffic whose repsonse time is less and low active connections
+It is generally used when we want to provide fastest repsonse time to resquest and different servers with different capablities
+
+4.) IP hash alogorithms
+traffic is routed based on the which server has the ip hash of incoming traffic
+This helps in routing the same user request to single server
+
+5.) Weighted algorithms:
+Each server has a weight attached based on capacity and perfomrmance matrix
+All the above types can be extended with weights attached
+
+6.) Geographical algorithms
+It is location based.
+It routes traffic to server closest to the user geographical location
+
+7.) Consistent hashing
+We use a hash function to distribute the traffic
+It forms a hash circle with servers
+Based on the ip address, it locates the server which is closest to the has value
+It used to server the same user consistently to the same server
+
+Health checks
+It continously monitors the health of all servers by using a health checks
+
+
+Softare Loadbalancer:
+NGNX is oneof the most common load balancer
+We install the servers and configure ngnx with multiple servers
+It ahs detailed understanding and documnetation for load balancers and health checks
+
+Other examples:
+HAProxy Enterprise
+
+Hardware loadbalancer:
+F5 loadbalancer:
+Citrix
+Cloud based loadbalancer
+Azure load balancer 
+Gcp load balancer
+
+
+Single Point of Failure
+Any component that cause the whole system to fail if it stops working
+eg: Database
+If database fails to establish the connection, it could lead to the api unable to communicate
+It can be difficult in scaling and authentication
+
+how to avoid load balancer from being a single point of Failure
+1.) Redunduncy
+Use more than one Loadbalancer
+2.) Health checks and monitoring
+Check the health of the load balancer.
+If the load balancer is unhealthy we must not direct traffic till the time it comes back to normal
+3.) Self healing systems
+The unhealthy load balancer must be able to self heal itself
